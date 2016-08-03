@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    id="com-transfor-animationPlugin"
+    version="0.0.1">
+
+    <name>YZWTransitionAnimation</name>
+    <description>Cordova plugin for update transorAnimation</description>
+    <license>MIT</license>
+  
+    <!--require cordova version -->
+    <engines>
+        <engine name="cordova" version=">=3.0.0" />
+    </engines>
+    <!-- js module-->
+    <js-module src="www/YZWTransitionAnimation.js">
+        <clobbers target="YZWTransitionAnimation" />
+    </js-module>
+    
+    <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="YZWTransitionAnimation">
+                <param name="ios-package" value="YZWTransitionAnimation"/>
+                <param name="onload" value="true"/>
+            </feature>
+        </config-file>
+        <header-file src="src/ios/YZWTransitionAnimation.h" />
+        <source-file src="src/ios/YZWTransitionAnimation.m" />
+        <framework src="WebKit.framework" />
+    </platform>
+
+</plugin>
